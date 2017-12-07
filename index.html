@@ -77,7 +77,7 @@
 			var game = {
 				wins: 0,
 				losses: 0,
-				words: ["alchemist", "alignment", "amulet", "asp", "ballista", "bard", "brigand", "censer", "charisma", "chimera", "clairvoyance", "cleric", "colossal", "critical", "dexterity", "diminutive", "diminution", "doppelganger", "druid", "elemental", "encumbrance", "ethereal", "familiar", "fortitude", "fumble", "gargantuan", "gargoyle", "gauntlets", "henchmen", "imp", "initiative", "intelligence", "lycanthrope", "mead", "melee", "milieu", "miniature", "minion", "munchkin", "ochre", "paladin", "periapt", "quiver", "reflex", "rune", "sage", "scimitar", "spectre", "strength", "succubus", "valhalla", "vital", "will", "wisdom", "zealot"],
+				words: ["alchemist", "alignment", "amulet", "asp", "ballista", "bard", "brigand", "celerity", "censer", "charisma", "chimera", "clairvoyance", "cleric", "colossal", "critical", "dexterity", "diminutive", "diminution", "doppelganger", "druid", "elemental", "encumbrance", "ethereal", "familiar", "flotsam", "fortitude", "fumble", "gargantuan", "gargoyle", "gauntlets", "henchmen", "imp", "initiative", "intelligence", "lycanthrope", "mead", "melee", "milieu", "miniature", "minion", "munchkin", "ochre", "paladin", "periapt", "petrification", "psychopomp", "quiver", "reflex", "rune", "sage", "scimitar", "skald", "spectre", "strength", "succubus", "valhalla", "vital", "will", "wisdom", "zealot"],
 				chosenLetters: [],
 				lettersWrong: 0,
 				blanks: "",
@@ -141,7 +141,7 @@
 						if (this.lettersWrong < 10) {
 							$("#comments").html("Wrong letter. Try again?");
 						} else {
-							$("#comments").html("You lost this word. The word was " + this.compChoice + ". Let's try a new one!");
+							$("#comments").html("You lost this word. The word was " + this.compChoice + ".");
 							this.lost();
 						}
 					} else {
@@ -150,7 +150,7 @@
 						if (this.blanks.indexOf("_") != -1) {
 							$("#comments").html("'"+ choice +"' is in the word!");
 						} else {
-							$("#comments").html("The word was " + this.compChoice + ". Let's try a new one!");
+							$("#comments").html("The word was " + this.compChoice + ".");
 							this.won();
 						}
 					}
@@ -167,6 +167,8 @@
 						console.log("game won");
 						$("#comments").append(" You are epic!");
 						this.reStartGame();
+					} else {
+						$("#comments").append(" Let's try a new one!");
 					}
 				},
 				lost: function() {
@@ -176,8 +178,10 @@
 					console.log("round lost");
 					if (game.losses > 10) {
 						console.log("game lost");
-						$("#comments").html("I guess Int is your dump stat... Don't worry, there are other great builds.");
+						$("#comments").append("I guess Int is your dump stat... Don't worry, there are other great builds.");
 						this.reStartGame();
+					} else {
+						$("#comments").append(" Let's try a new one!");
 					}
 				}
 
