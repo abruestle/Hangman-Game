@@ -1,9 +1,9 @@
 body {
 	font-family: 'Spectral SC', serif;
+	/*display: flex;*/
 }
 
 .main {
-	top: 20px;
 	opacity: .9;
 }
 
@@ -17,4 +17,14 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+/*Bootstrap and flexboxes did not quite do what I wanted (vertical center when in md or higher)
+So media query!*/
+@media screen and (min-width: 992px) {
+	.main {
+		position: absolute;
+	    top: 50%;
+	    transform: translateY(-50%);
+	}
 }

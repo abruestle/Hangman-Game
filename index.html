@@ -13,7 +13,7 @@
 	<body>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-offset-2 col-sm-8 main">
+				<div class="col-md-offset-2 col-md-8 main">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 						<h1 class="panel-title">Welcome to Tabletop RPG Hangman.</h1>
@@ -114,8 +114,8 @@
 				//...wallpaper shenanigans.
 				wallpapers: ["assets/images/d20.jpg", "assets/images/e8178ec91909ce7dd74f62fbdbb7b3f8.png", "assets/images/googly.png", "assets/images/PonyGMScreen.png", "assets/images/zD18bKX.jpg"],
 				changeWallpaper: function() {
-					body.style.background = "#000000 url('" + this.wallpapers[(Math.floor(Math.random() * this.wallpapers.length))] + "') no-repeat center center";
-					
+					document.body.style.background = "url('" + this.wallpapers[(Math.floor(Math.random() * this.wallpapers.length))] + "') fixed center center no-repeat #000000";
+
 					// $body.attr("background", "#000000 url('" + this.wallpapers[(Math.floor(Math.random() * this.wallpapers.length))] + "') no-repeat center center";
 					// $body.attr("class", "fancy");
 				},
