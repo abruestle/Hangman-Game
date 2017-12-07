@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Tabletop RPG Hangman</title>
+		<title>Document</title>
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
  		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -114,10 +114,7 @@
 				//...wallpaper shenanigans.
 				wallpapers: ["assets/images/d20.jpg", "assets/images/e8178ec91909ce7dd74f62fbdbb7b3f8.png", "assets/images/googly.png", "assets/images/PonyGMScreen.png", "assets/images/zD18bKX.jpg"],
 				changeWallpaper: function() {
-					body.style.background = "#000000 url('" + this.wallpapers[(Math.floor(Math.random() * this.wallpapers.length))] + "') no-repeat center center";
-					
-					// $body.attr("background", "#000000 url('" + this.wallpapers[(Math.floor(Math.random() * this.wallpapers.length))] + "') no-repeat center center";
-					// $body.attr("class", "fancy");
+					document.body.style.background = "#000000 url('" + this.wallpapers[(Math.floor(Math.random() * this.wallpapers.length))] + "') no-repeat center center";
 				},
 				//check to see if letter is in the word after adding it to chosen words. After that send it to won/lost if 
 				play: function(choice) {
