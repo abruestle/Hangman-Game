@@ -9,6 +9,7 @@
 		
 		<link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -76,18 +77,24 @@
 			var game = {
 				wins: 0,
 				losses: 0,
-				words: ["alchemist", "alignment", "amulet", "asp", "ballista", "bard", "brigand", "censer", "charisma", "chimera", "clairvoyance", "cleric", "colossal", "critical", "dexterity", "diminutive", "dimunition", "doppelganger", "druid", "elemental", "encumbrance", "ethereal", "familiar", "fortitude", "fumble", "gargantuan", "gargoyle", "gauntlets", "henchmen", "imp", "initiative", "intelligence", "lycanthrope", "mead", "melee", "milieu", "miniature", "minion", "munchkin", "ochre", "paladin", "periapt", "quiver", "reflex", "rune", "sage", "scimitar", "spectre", "strength", "succubus", "valhalla", "vital", "will", "wisdom", "zealot"],
+				words: ["alchemist", "alignment", "amulet", "asp", "ballista", "bard", "brigand", "censer", "charisma", "chimera", "clairvoyance", "cleric", "colossal", "critical", "dexterity", "diminutive", "diminution", "doppelganger", "druid", "elemental", "encumbrance", "ethereal", "familiar", "fortitude", "fumble", "gargantuan", "gargoyle", "gauntlets", "henchmen", "imp", "initiative", "intelligence", "lycanthrope", "mead", "melee", "milieu", "miniature", "minion", "munchkin", "ochre", "paladin", "periapt", "quiver", "reflex", "rune", "sage", "scimitar", "spectre", "strength", "succubus", "valhalla", "vital", "will", "wisdom", "zealot"],
 				chosenLetters: [],
 				lettersWrong: 0,
 				blanks: "",
 				// random word from list is selected, its letters are put into an array
 				compChoice: "",
 				rewriteBlanks: function(){
+					//initializes blanks to ""
 					this.blanks = "";
+					//goes through each letter i
 					for  (i = 0; i < this.compChoice.length; i++) {
+						//if the letter in the answer exists in the chosen letters, continue
 						if (this.chosenLetters.indexOf(this.compChoice[i]) != -1){
-						this.blanks = this.blanks + " " + this.compChoice[i];
+							//then add space and letter
+							this.blanks = this.blanks + " " + this.compChoice[i];
+							//else
 						} else {
+							//create a blank
 							this.blanks = this.blanks + " _";
 						}
 					}

@@ -4,7 +4,7 @@ body {
 }
 
 .main {
-	opacity: .9;
+	opacity: .8;
 }
 
 #letters {
@@ -19,6 +19,10 @@ body {
   background-size: cover;
 }
 
+.panel-title {
+	font-size:25px;
+}
+
 /*Bootstrap and flexboxes did not quite do what I wanted (vertical center when in md or higher)
 So media query!*/
 @media screen and (min-width: 992px) {
@@ -26,5 +30,16 @@ So media query!*/
 		position: absolute;
 	    top: 50%;
 	    transform: translateY(-50%);
+	}
+
+}
+
+@media screen and (max-width: 991px) {
+	.main {
+		margin-top: 20px;
+	}
+
+	.h1, h1 {
+		font-size:25px;
 	}
 }
