@@ -1,6 +1,8 @@
 body {
 	font-family: 'Spectral SC', serif;
 	/*display: flex;*/
+	 transition: background 2s;
+    -webkit-transition: background 2s;
 }
 
 .main {
